@@ -1,5 +1,4 @@
 import os
-import numpy as np
 import pandas as pd
 from lib.vectorizer import Vectorizer
 
@@ -26,11 +25,7 @@ for file in os.listdir(directory):
             vector.append(labelCount)
             X.append(vector)
 
-        print("|", label, "|", int(np.sum(vector[0])), "|", int(np.sum(vector[1])), "|",  int(np.sum(vector[2])), "|",  int(np.sum(vector[3])),
-              "|",  int(np.sum(vector[4])), "|",  int(np.sum(vector[5])) ,"|",
-              int(np.sum(vector[6])),"|",  int(np.sum(vector[7])),"|",  int(np.sum(vector[8])),"|",  int(np.sum(vector[9])),"|",
-              int(np.sum(vector[10])), "|")
 
 # saving the data frame
 df = pd.DataFrame(X)
-df.to_csv("author_identification_article_plits.csv", index=False, header=False)
+df.to_csv("author_identification_article_splits.csv", index=False, header=False)
